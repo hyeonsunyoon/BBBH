@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url(assets/groundback.png);
+    background-repeat: repeat;
+}
+
+#draggableContainer {
+    position: absolute;
+}
+
+#draggableImage {
+    position: relative;
+    pointer-events: none; /* 첫 번째 이미지 자체는 클릭 불가능하게 설정 */
+}
+
+#draggableArea {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* 드래그 가능한 영역의 너비 */
+    height: 150px; /* 드래그 가능한 영역의 높이 */
+    cursor: pointer;
+}
+
+#staticImage {
+    position: absolute;
+}
+
+#text {
+    position: absolute;
+    top: -30px; /* 텍스트 위치 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#helpImg {
+    position: fixed;
+    top: 10px;   /* 화면 상단에서 10px 떨어지도록 설정 */
+    right: 10px; /* 화면 오른쪽에서 10px 떨어지도록 설정 */
+    cursor: pointer; /* 커서를 손가락 모양으로 변경 */
+}
+
+#textCloud {
+    position: absolute;
+    top: 10px;
+    align-self: center;
+}
