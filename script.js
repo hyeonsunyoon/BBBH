@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const staticImage = document.getElementById("staticImage");
     const textElement = document.getElementById("text");
 
-    const phrases = ['나는 보노보노', '길거리 생활 25년', '너는 누구냐!', '콜록콜록'];
+    const phrases = ['나는 보노보노', '길거리 생활 25년', '너는 누구냐!', '콜록콜록', 'I\'m Bonobono.', 'I\'ve been living on this wall for 25yrs.', 'Who are you!', '*cough*'];
     const fonts = ['Arial', 'Courier New', 'Georgia', 'Times New Roman', 'Verdana', 'Comic Sans MS'];
 
     // 이미지 랜덤 위치에 배치
@@ -101,6 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
         textElement.style.color = 'white';
     }
 
-    setInterval(updateText, 5000);
+    setInterval(updateText, 2500);
     updateText(); // 페이지 로드 시 처음 문구 설정
 });
