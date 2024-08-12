@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const phrases = ['나는 보노보노', '길거리 생활 25년', '너는 누구냐!', '콜록콜록', 'I\'m Bonobono.', 'I\'ve been living on this wall for 25yrs.', 'Who are you!', '*cough*'];
     const fonts = ['Arial', 'Courier New', 'Georgia', 'Times New Roman', 'Verdana', 'Comic Sans MS'];
 
+    let lastPhraseIndex = -1; // 마지막으로 선택된 문구의 인덱스
+
     // 이미지 랜덤 위치에 배치
     function placeImageRandomly(element, offsetX = 0, offsetY = 0) {
         const maxWidth = window.innerWidth - element.offsetWidth - offsetX;
@@ -94,7 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 5초마다 문구와 폰트를 랜덤으로 변경
     function updateText() {
-        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * phrases.length);
+        } while (randomIndex === lastPhraseIndex);
+
+        lastPhraseIndex = randomIndex;
+        const randomPhrase = phrases[randomIndex];
         const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
         textElement.textContent = randomPhrase;
         textElement.style.fontFamily = randomFont;
